@@ -3,15 +3,16 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
-  const handleClick = () => {
-    setCount((prev) => prev + 1)
-  }
+  const [animation, setAnimation] = useState(false)
 
   return (
     <div className='container'>
-      <p>{count}</p>
-      <button onClick={handleClick}>Click me!</button>
+      <p className={`${animation ? 'animation' : ''}`}>{count}</p>
+      <button onClick={() => setCount((prevCount) => {
+        setAnimation((prevAnimation) => !prevAnimation)
+        return prevCount + 1
+      })}>Click me!</button>
+      <button onClick={() => setCount(() => setCount(0))}>Reset</button>
     </div>
   )
 }

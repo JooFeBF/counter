@@ -1,13 +1,33 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100dvw;
-    height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  gap: 10px;
 }
 
 .container button {
-    border: 0px;
-    padding: 10px;
+  border: 0px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.animation {
+  animation: jump 1s;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
